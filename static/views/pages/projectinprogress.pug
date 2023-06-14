@@ -1,0 +1,43 @@
+extends ../layout.pug
+
+block prepend styles
+  link(rel='stylesheet' href='//cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css')
+
+block content
+  div(class='breadcrumb')
+    li= title
+  form(id='projectinprogress-add-form' name='projectinprogress-add-form' class='form-inline' action='')
+    div(class='form-group')
+      div(class='col-md-3')
+        label(for='project') Project
+      div(class='col-md-9')
+        input(id='project' name='project' value='' class='form-control' required='required')
+  
+    div(class='form-group')
+      div(class='col-md-3')
+        label(for='performer') Perfotmer
+      div(class='col-md-9')
+        input(id='performer' name='performer'  class='form-control' required='required')
+    
+    div(class='form-group')
+      div(class='col-md-3')
+        label(for='starttime') Start time
+      div(class='col-md-9')
+        input(id='starttime' name='starttime' class='form-control' required='required')
+
+    div(class='form-group')
+      div(class='col-md-3')
+        label(for='endtime') End Time
+      div(class='col-md-9')
+        input(id='endtime' name='endtime' value='' class='form-control' required='required')
+
+   
+    div(class='form-group')
+      div(class='col-md-12')
+        button(type='submit' class='btn btn-primary') Create
+      div.list-wrapper
+        table(id='projectinprogress-list')
+block append scripts
+  script(src='/static/js/models/projectinprogress.js')
+  script(src='//cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js')
+  script(src='/static/js/views/projectinprogress.js')
